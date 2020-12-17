@@ -1,4 +1,4 @@
-package com.trello.config;
+package com.trello.core.config;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,15 +11,15 @@ import java.util.Properties;
 /**
  * PropertiesReader class.
  */
-public final class Environment {
+public final class EnvironmentCore {
 
     private static final String PATH = "gradle.properties";
-    private static final Logger LOGGER = LogManager.getLogger(Environment.class);
-    private static Environment singleInstance;
+    private static final Logger LOGGER = LogManager.getLogger(EnvironmentCore.class);
+    private static EnvironmentCore singleInstance;
     private Properties property;
     private FileReader reader;
 
-    private Environment() {
+    private EnvironmentCore() {
         try {
             reader = new FileReader(PATH);
             property = new Properties();
@@ -40,56 +40,11 @@ public final class Environment {
      *
      * @return PropertiesReader instance.
      */
-    public static Environment getInstance() {
+    public static EnvironmentCore getInstance() {
         if (singleInstance == null) {
-            singleInstance = new Environment();
+            singleInstance = new EnvironmentCore();
         }
         return singleInstance;
-    }
-
-    /**
-     * get the BaseUrl from the file.properties.
-     *
-     * @return base url.
-     */
-    public String getBaseUrl() {
-        return getEnvProperty("baseUrl");
-    }
-
-    /**
-     * get the User from the file.properties.
-     *
-     * @return User value.
-     */
-    public String getUsername() {
-        return getEnvProperty("username");
-    }
-
-    /**
-     * get the password from the file.properties.
-     *
-     * @return Password value.
-     */
-    public String getPassword() {
-        return getEnvProperty("password");
-    }
-
-    /**
-     * get the audioTemplatesPath from the file.properties.
-     *
-     * @return AudioTemplatesPath value.
-     */
-    public String getTemplatesPath() {
-        return getEnvProperty("templatesPath");
-    }
-
-    /**
-     * get the schemasPath from the file.properties.
-     *
-     * @return schemasPath value.
-     */
-    public String getSchemasPath() {
-        return getEnvProperty("schemasPath");
     }
 
     /**
@@ -114,9 +69,5 @@ public final class Environment {
         } catch (IOException e) {
             LOGGER.error("Cannot close File Reader.");
         }
-    }
-
-    public String getDriveChromePath() {
-        return getEnvProperty("driveChromePath");
     }
 }
