@@ -1,4 +1,4 @@
-package com.trello.trello.ui;
+package com.trello.trello.ui.pages;
 
 import com.trello.trello.config.EnvironmentTrello;
 import core.selenium.WebDriverManager;
