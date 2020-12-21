@@ -12,3 +12,11 @@ out/
 .gradle
 build/
 reports/*
+
+.allure/
+.classpath
+.project
+.settings/
+bin/
+logs/
+
