@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Board extends BasePage {
+public class BoardPage extends BasePage {
 
     @FindBy(css = "div#header span[aria-label='AddIcon']")
     WebElement btnAdd;
