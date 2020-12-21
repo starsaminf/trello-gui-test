@@ -9,7 +9,7 @@ public final class EnvironmentFirefox extends EnvironmentBase {
     private static EnvironmentFirefox environmentFirefox;
 
     /**
-     * Initializes an instance of Environment Firefox
+     * Initializes an instance of Environment Firefox.
      */
     private EnvironmentFirefox() {
         super(PATH);

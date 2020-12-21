@@ -9,7 +9,7 @@ public final class EnvironmentChrome extends EnvironmentBase {
     private static EnvironmentChrome environmentChrome;
 
     /**
-     * Initializes an instance of Environment Chrome
+     * Initializes an instance of Environment Chrome.
      */
     private EnvironmentChrome() {
         super(PATH);

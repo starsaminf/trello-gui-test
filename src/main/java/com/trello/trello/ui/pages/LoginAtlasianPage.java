@@ -3,10 +3,11 @@ package com.trello.trello.ui.pages;
 import core.selenium.WebDriverHelper;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginAtlasian extends BasePage {
+/**
+ * LoginAtlasianPage Class.
+ */
+public class LoginAtlasianPage extends BasePage {
 
     @FindBy(id = "password")
     private WebElement password;
@@ -14,11 +15,19 @@ public class LoginAtlasian extends BasePage {
     @FindBy(id = "login-submit")
     private  WebElement loginSubmitBtn;
 
-    public void setPassword(final String passw) {
-        WebDriverWait webDriverWait = core.selenium.WebDriverManager.getInstance().getWebDriverWait();
-        webDriverWait.until(ExpectedConditions.elementToBeClickable(password));
+    /**
+     * Constructor of LoginAtlasianPage.
+     */
+    public LoginAtlasianPage() {
+        WebDriverHelper.waitUntil(loginSubmitBtn);
+    }
 
-        WebDriverHelper.setElement(this.password, passw);
+    /**
+     * Sets Password.
+     * @param pass
+     */
+    public void setPassword(final String pass) {
+        WebDriverHelper.setElement(password, pass);
         WebDriverHelper.clickElement(loginSubmitBtn);
     }
 }
