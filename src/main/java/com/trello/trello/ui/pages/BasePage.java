@@ -1,35 +1,43 @@
 package com.trello.trello.ui.pages;
 
-import com.trello.trello.config.EnvironmentTrello;
+import core.selenium.WebDriverHelper;
 import core.selenium.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+/**
+ * BasePage class.
+ */
 public abstract class BasePage {
 
-    protected WebDriver webDrive;
-    protected WebDriverWait webDriveWait;
-    protected final String BASE_URL = EnvironmentTrello.getInstance().getBaseUrl();
+    private WebDriver webDrive;
+    private WebDriverWait webDriveWait;
 
+    /**
+     * Constructor for BasePage.
+     */
     public BasePage() {
         this.webDrive = WebDriverManager.getInstance().getWebDrive();
         this.webDriveWait = WebDriverManager.getInstance().getWebDriverWait();
         PageFactory.initElements(this.webDrive, this);
     }
 
-    protected void waitUntil(WebElement webElement) {
-        webDriveWait.until(ExpectedConditions.elementToBeClickable(webElement));
+    /**
+     * Method to clickElement.
+     * @param webElement
+     */
+    public void clickElement(final WebElement webElement) {
+        WebDriverHelper.waitUntil(webElement);
+        webElement.click();
     }
 
-    /**
-     * Method to go to specific url
-     * @param endPoint
+     /**
+     * Gets CurrentUrl.
+     * @return current URL
      */
-    public void goToURL(final String endPoint) {
-        String url = String.format("%s%s", BASE_URL, endPoint);
-        this.webDrive.get(url);
+    public String getCurrentUrl() {
+        return webDrive.getCurrentUrl();
     }
 }

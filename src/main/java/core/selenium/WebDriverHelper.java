@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
- * This class is helper of WebDriverManager class
+ * This class is helper of WebDriverManager class.
  */
 public final class WebDriverHelper {
 
@@ -16,7 +16,7 @@ public final class WebDriverHelper {
     }
 
     /**
-     * Sets a text in the webElement
+     * Sets a text in the webElement.
      * @param webElement
      * @param text
      */
@@ -37,7 +37,7 @@ public final class WebDriverHelper {
     }
 
     /**
-     * Clicks an element
+     * Clicks an element.
      * @param webElement
      */
     public static void clickElement(final WebElement webElement) {
@@ -46,9 +46,22 @@ public final class WebDriverHelper {
         webElement.click();
     }
 
+    /**
+     * Clicks an by.
+     * @param by
+     */
     public static void clickElement(final By by) {
-        WebDriver webDriver =WebDriverManager.getInstance().getWebDrive();
+        WebDriver webDriver = WebDriverManager.getInstance().getWebDrive();
         WebElement webElement = webDriver.findElement(by);
         clickElement(webElement);
+    }
+
+    /**
+     * Method wait to load a webElement.
+     * @param webElement
+     */
+    public static void waitUntil(final WebElement webElement) {
+        WebDriverWait webDriverWait = WebDriverManager.getInstance().getWebDriverWait();
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 }

@@ -39,7 +39,7 @@ public class EnvironmentBase {
 
     /**
      * Gets a driver Path.
-     * @return
+     * @return a driver ChromePath.
      */
     public String getDriverPath() {
         return getEnvProperty("driveChromePath");
@@ -47,7 +47,7 @@ public class EnvironmentBase {
 
     /**
      * Gets a implicit time.
-     * @return
+     * @return a implicitly wait.
      */
     public long getImplicitTime() {
         return Long.parseLong(getEnvProperty("implicitTime"));
@@ -55,16 +55,16 @@ public class EnvironmentBase {
 
     /**
      * Gets a explicit time.
-     * @return
+     * @return a explicitly wait.
      */
     public long getExplicitTime() {
         return Long.parseLong(getEnvProperty("explicitTime"));
     }
 
     /**
-     * Gets environment property
+     * Gets environment property.
      * @param env
-     * @return
+     * @return localProperty
      */
     protected String getEnvProperty(final String env) {
         String localProperty = System.getProperty(env);

@@ -3,13 +3,13 @@ package core.selenium.config;
 /**
  * PropertiesReader class.
  */
-public final class Environment extends EnvironmentBase{
+public final class Environment extends EnvironmentBase {
 
     private static final String PATH = "gradle.properties";
     private static Environment environment;
 
     /**
-     * Initializes an instance of Environment Chrome
+     * Initializes an instance of Environment Chrome.
      */
     private Environment() {
         super(PATH);

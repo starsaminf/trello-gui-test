@@ -7,7 +7,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-public class PageTransporter {
+/**
+ * PageTransporter Class.
+ */
+public final class PageTransporter {
     private static final HashMap<String, String> PAGE_URL = new HashMap<>();
     static {
         PAGE_URL.put("LOGIN", "/login");
@@ -15,11 +18,28 @@ public class PageTransporter {
         PAGE_URL.put("BOARD", "/boards");
     }
 
-    public static void navigateToPage(final String pageName) throws MalformedURLException {
+    private PageTransporter() {
+
+    }
+
+    /**
+     * Navigate to URL.
+     * @param pageName
+     */
+    public static void navigateToPage(final String pageName) {
         navigateToUrl(EnvironmentTrello.getInstance().getBaseUrl().concat(PAGE_URL.get(pageName.toUpperCase())));
     }
 
-    private static void navigateToUrl(final String url) throws MalformedURLException {
-        WebDriverManager.getInstance().getWebDrive().navigate().to(new URL(url));
+    /**
+     * Navigate to URL.
+     * @param url
+     */
+    private static void navigateToUrl(final String url) {
+        try {
+            WebDriverManager.getInstance().getWebDrive().navigate().to(new URL(url));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+            throw new NullPointerException("This url is not valid :" + e.getMessage());
+        }
     }
 }

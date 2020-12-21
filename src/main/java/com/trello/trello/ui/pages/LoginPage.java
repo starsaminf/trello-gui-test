@@ -4,10 +4,8 @@ import com.trello.trello.config.EnvironmentTrello;
 import core.selenium.WebDriverHelper;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Login extends BasePage {
+public class LoginPage extends BasePage {
 
     @FindBy(id = "user")
     private WebElement user;
@@ -18,34 +16,47 @@ public class Login extends BasePage {
     @FindBy(id = "login")
     private WebElement loginBtn;
 
-    public Login() {
+    @FindBy(id = "trello-root")
+    private  WebElement trelloRoot;
 
+    /**
+     * Constructor of the LoginPage.
+     */
+    public LoginPage() {
+        WebDriverHelper.waitUntil(loginBtn);
     }
 
+    /**
+     * Sets username.
+      * @param userName
+     */
     private void setUser(final String userName) {
         WebDriverHelper.setElement(user, userName);
     }
 
-    public void setPassword(final String password) {
-        WebDriverHelper.setElement(this.password, password);
+    /**
+     * Sets password.
+     * @param passwd
+     */
+    public void setPassword(final String passwd) {
+        WebDriverHelper.setElement(password, passwd);
     }
 
-    public static void clickElement(final WebElement webElement) {
-        WebDriverWait webDriverWait = core.selenium.WebDriverManager.getInstance().getWebDriverWait();
-        webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement)).click();
-        webElement.click();
-    }
-
+    /**
+     * Method to login with username and password.
+     */
     public void login() {
-        String user = EnvironmentTrello.getInstance().getUsername();
-        String password = EnvironmentTrello.getInstance().getPassword();
-        setUser(user);
-        setPassword(password);
-        waitUntil(loginBtn);
+        String userName = EnvironmentTrello.getInstance().getUsername();
+        String pass = EnvironmentTrello.getInstance().getPassword();
+        setUser(userName);
+        setPassword(pass);
         clickElement(loginBtn);
     }
 
-    public String getCurrentUrl() {
-        return webDrive.getCurrentUrl();
+    /**
+     * Waits trelloRoot will be visible in DOM.
+     */
+    public void waitLoadPage() {
+        WebDriverHelper.waitUntil(trelloRoot);
     }
 }

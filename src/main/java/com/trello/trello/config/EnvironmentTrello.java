@@ -77,9 +77,9 @@ public final class EnvironmentTrello {
     }
 
     /**
-     * Gets environment property
+     * Gets environment property.
      * @param env
-     * @return
+     * @return localProperty
      */
     protected String getEnvProperty(final String env) {
         String localProperty = System.getProperty(env);
