@@ -57,7 +57,7 @@ public class LoginSteps {
     @Given("I am logged with valid credentials")
     public void iAmLoggedWithValidCredentials() {
         try {
-            PageTransporter.navigateToPage(Constant.getLoginPageURL());
+            PageTransporter.navigateToPage("LOGIN");
         } catch (MalformedURLException e) {
             e.printStackTrace();
             throw new NullPointerException("This url is not valid :" + e.getMessage());
