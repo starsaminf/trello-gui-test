@@ -63,6 +63,7 @@ public class LoginSteps {
     @Given("I am logged with valid credentials")
     public void iAmLoggedWithValidCredentials() {
         PageTransporter.navigateToPage("LOGIN");
+        login = new LoginPage();
         login.login();
         LoginAtlasianPage loginAtlasian = new LoginAtlasianPage();
         loginAtlasian.setPassword(EnvironmentTrello.getInstance().getPassword());

@@ -1,5 +1,6 @@
 package com.trello.trello.runner;
 
+import core.selenium.WebDriverManager;
 import core.selenium.config.Environment;
 import core.selenium.config.EnvironmentChrome;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
@@ -23,6 +24,7 @@ public final class Runner extends AbstractTestNGCucumberTests {
     public Object[][] scenarios() {
         return super.scenarios();
     }
+
     /**
      * Executes code before all scenarios.
      */
@@ -37,6 +39,6 @@ public final class Runner extends AbstractTestNGCucumberTests {
      */
     @AfterTest
     public void afterAllScenarios() {
-        // Code executed after features execution.
+        WebDriverManager.getInstance().getWebDriver().quit();
     }
 }

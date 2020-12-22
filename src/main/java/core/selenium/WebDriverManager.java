@@ -1,7 +1,7 @@
 package core.selenium;
 
 import core.selenium.config.EnvironmentChrome;
-import core.selenium.driver.Chrome;
+import core.selenium.driver.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -20,7 +20,7 @@ public final class WebDriverManager {
         long implicitTime = EnvironmentChrome.getInstance().getImplicitTime();
         long explicitTime = EnvironmentChrome.getInstance().getExplicitTime();
 
-        webDriver = new Chrome().initDriver();
+        webDriver = DriverFactory.getDriver();
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(implicitTime, TimeUnit.SECONDS);
         webDriverWait = new WebDriverWait(webDriver, explicitTime);
@@ -41,7 +41,7 @@ public final class WebDriverManager {
      * Gets webDriver.
      * @return a webDriver
      */
-    public WebDriver getWebDrive() {
+    public WebDriver getWebDriver() {
         return webDriver;
     }
 
