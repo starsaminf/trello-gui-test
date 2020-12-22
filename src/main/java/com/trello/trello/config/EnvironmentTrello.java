@@ -1,8 +1,7 @@
-package com.trello.config;
+package com.trello.trello.config;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,15 +10,18 @@ import java.util.Properties;
 /**
  * PropertiesReader class.
  */
-public final class Environment {
+public final class EnvironmentTrello {
 
-    private static final String PATH = "gradle.properties";
-    private static final Logger LOGGER = LogManager.getLogger(Environment.class);
-    private static Environment singleInstance;
+    private static final String PATH = "trello.properties";
+    private static EnvironmentTrello environment;
+    private static final Logger LOGGER = LogManager.getLogger(EnvironmentTrello.class);
     private Properties property;
     private FileReader reader;
 
-    private Environment() {
+    /**
+     * Initializes an instance of properties files.
+     */
+    private EnvironmentTrello() {
         try {
             reader = new FileReader(PATH);
             property = new Properties();
@@ -40,11 +42,11 @@ public final class Environment {
      *
      * @return PropertiesReader instance.
      */
-    public static Environment getInstance() {
-        if (singleInstance == null) {
-            singleInstance = new Environment();
+    public static EnvironmentTrello getInstance() {
+        if (environment == null) {
+            environment = new EnvironmentTrello();
         }
-        return singleInstance;
+        return environment;
     }
 
     /**
@@ -53,7 +55,7 @@ public final class Environment {
      * @return base url.
      */
     public String getBaseUrl() {
-        return getEnvProperty("baseUrl");
+        return this.getEnvProperty("baseurl");
     }
 
     /**
@@ -62,7 +64,7 @@ public final class Environment {
      * @return User value.
      */
     public String getUsername() {
-        return getEnvProperty("username");
+        return this.getEnvProperty("username");
     }
 
     /**
@@ -71,36 +73,15 @@ public final class Environment {
      * @return Password value.
      */
     public String getPassword() {
-        return getEnvProperty("password");
+        return this.getEnvProperty("password");
     }
 
     /**
-     * get the audioTemplatesPath from the file.properties.
-     *
-     * @return AudioTemplatesPath value.
+     * Gets environment property.
+     * @param env
+     * @return localProperty
      */
-    public String getTemplatesPath() {
-        return getEnvProperty("templatesPath");
-    }
-
-    /**
-     * get the schemasPath from the file.properties.
-     *
-     * @return schemasPath value.
-     */
-    public String getSchemasPath() {
-        return getEnvProperty("schemasPath");
-    }
-
-    /**
-     * get the cucumberThreadCount from the file.properties.
-     * @return cucumberThreadCount value.
-     */
-    public String getCucumberThreadCount() {
-        return getEnvProperty("cucumberThreadCount");
-    }
-
-    private String getEnvProperty(final String env) {
+    protected String getEnvProperty(final String env) {
         String localProperty = System.getProperty(env);
         if (localProperty == null) {
             return this.property.getProperty(env);
@@ -108,15 +89,14 @@ public final class Environment {
         return localProperty;
     }
 
+    /**
+     * Closes FileReader.
+     */
     private void closeReader() {
         try {
             reader.close();
         } catch (IOException e) {
             LOGGER.error("Cannot close File Reader.");
         }
-    }
-
-    public String getDriveChromePath() {
-        return getEnvProperty("driveChromePath");
     }
 }
