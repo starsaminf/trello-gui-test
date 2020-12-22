@@ -16,7 +16,7 @@ public final class Environment extends EnvironmentBase {
     }
 
     /**
-     * get instance or create a new one.
+     * Gets instance or create a new one.
      *
      * @return PropertiesReader instance.
      */
@@ -28,10 +28,18 @@ public final class Environment extends EnvironmentBase {
     }
 
     /**
-     * get the cucumberThreadCount from the file.properties.
+     * Gets the cucumberThreadCount from the file.properties.
      * @return cucumberThreadCount value.
      */
     public String getCucumberThreadCount() {
         return getEnvProperty("cucumberThreadCount");
+    }
+
+    /**
+     * Gets the configuration of the browser.
+     * @return browser value.
+     */
+    public String getBrowser() {
+        return getEnvProperty("browser");
     }
 }

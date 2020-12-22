@@ -31,7 +31,7 @@ public final class WebDriverHelper {
      * @param text
      */
     public static void setElement(final By by, final String text) {
-        WebDriver webDriver = WebDriverManager.getInstance().getWebDrive();
+        WebDriver webDriver = WebDriverManager.getInstance().getWebDriver();
         WebElement webElement = webDriver.findElement(by);
         setElement(webElement, text);
     }
@@ -51,7 +51,7 @@ public final class WebDriverHelper {
      * @param by
      */
     public static void clickElement(final By by) {
-        WebDriver webDriver = WebDriverManager.getInstance().getWebDrive();
+        WebDriver webDriver = WebDriverManager.getInstance().getWebDriver();
         WebElement webElement = webDriver.findElement(by);
         clickElement(webElement);
     }
