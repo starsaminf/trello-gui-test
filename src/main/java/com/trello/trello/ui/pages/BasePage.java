@@ -19,7 +19,7 @@ public abstract class BasePage {
      * Constructor for BasePage.
      */
     public BasePage() {
-        this.webDrive = WebDriverManager.getInstance().getWebDrive();
+        this.webDrive = WebDriverManager.getInstance().getWebDriver();
         this.webDriveWait = WebDriverManager.getInstance().getWebDriverWait();
         PageFactory.initElements(this.webDrive, this);
     }
