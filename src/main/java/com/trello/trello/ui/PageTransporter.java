@@ -36,7 +36,7 @@ public final class PageTransporter {
      */
     private static void navigateToUrl(final String url) {
         try {
-            WebDriverManager.getInstance().getWebDrive().navigate().to(new URL(url));
+            WebDriverManager.getInstance().getWebDriver().navigate().to(new URL(url));
         } catch (MalformedURLException e) {
             e.printStackTrace();
             throw new NullPointerException("This url is not valid :" + e.getMessage());
