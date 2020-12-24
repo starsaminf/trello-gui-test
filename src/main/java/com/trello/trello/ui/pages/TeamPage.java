@@ -2,7 +2,6 @@ package com.trello.trello.ui.pages;
 
 import com.trello.trello.entities.Team;
 import core.selenium.WebDriverHelper;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -47,8 +46,7 @@ public class TeamPage extends BasePage {
         WebDriverHelper.waitUntil(inputTeamName);
         WebDriverHelper.setElement(inputTeamName, team.getName());
         WebDriverHelper.clickElement(dropDownTeamType);
-        By dropDownOption = By.xpath("//*[contains(text(),'" + team.getType() + "')]");
-        WebDriverHelper.clickElement(dropDownOption);
+        WebDriverHelper.selectDropDownOptionByName(team.getType());
         WebDriverHelper.setElement(inputTeamDescription, team.getDescription());
         WebDriverHelper.clickElement(btnContinue);
         WebDriverHelper.waitUntil(btnThisLater);

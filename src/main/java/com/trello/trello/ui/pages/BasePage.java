@@ -1,9 +1,7 @@
 package com.trello.trello.ui.pages;
 
-import core.selenium.WebDriverHelper;
 import core.selenium.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,15 +23,6 @@ public abstract class BasePage {
     }
 
     /**
-     * Method to clickElement.
-     * @param webElement
-     */
-    public void clickElement(final WebElement webElement) {
-        WebDriverHelper.waitUntil(webElement);
-        webElement.click();
-    }
-
-     /**
      * Gets CurrentUrl.
      * @return current URL
      */

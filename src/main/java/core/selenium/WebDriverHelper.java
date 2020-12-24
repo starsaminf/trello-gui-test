@@ -64,4 +64,13 @@ public final class WebDriverHelper {
         WebDriverWait webDriverWait = WebDriverManager.getInstance().getWebDriverWait();
         webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
+
+    /**
+     * Selects an element from a html select tag.
+     * @param optionName
+     */
+    public static void selectDropDownOptionByName(final String optionName) {
+        By dropDownOption = By.xpath("//*[contains(text(),'" + optionName + "')]");
+        WebDriverHelper.clickElement(dropDownOption);
+    }
 }
