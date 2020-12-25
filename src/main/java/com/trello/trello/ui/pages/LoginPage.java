@@ -48,9 +48,10 @@ public class LoginPage extends BasePage {
     public void login() {
         String userName = EnvironmentTrello.getInstance().getUsername();
         String pass = EnvironmentTrello.getInstance().getPassword();
+        WebDriverHelper.waitUntil(loginBtn);
         setUser(userName);
         setPassword(pass);
-        WebDriverHelper.waitUntil(loginBtn);
+        WebDriverHelper.clickElement(loginBtn);
     }
 
     /**
