@@ -31,7 +31,6 @@ public class TeamSteps {
     @When("I navigate to create team button")
     public void iNavigateToCreateTeamButton() {
         leftMenu = new LeftMenuComponent();
-        leftMenu.waitLoadPage();
         leftMenu.clickBtnTeams();
     }
 

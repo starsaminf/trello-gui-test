@@ -7,18 +7,17 @@ import org.openqa.selenium.support.FindBy;
 
 public class LeftMenuComponent extends BasePage {
 
-    //boards
-    //templates
-    //home
+    @FindBy(css = "a[href$='boards']")
+    private WebElement btnBoard;
+
+    @FindBy(css = "a[href*='templates'])")
+    private WebElement btnTemplate;
+
+    @FindBy(css = "a[data-test-id='home-link']")
+    private WebElement btnHome;
+
     @FindBy(css = "div#content button[data-test-id='home-navigation-create-team-button']")
     private WebElement btnTeams;
-
-    /**
-     * Method wait to load the component.
-     */
-    public LeftMenuComponent() {
-        WebDriverHelper.waitUntil(btnTeams);
-    }
 
     /**
      * Does click the "+" button.
@@ -28,9 +27,23 @@ public class LeftMenuComponent extends BasePage {
     }
 
     /**
-     * Method wait to load the page.
+     * Does click the template button.
      */
-    public void waitLoadPage() {
+    public void clickBtnTemplate() {
+        WebDriverHelper.clickElement(btnTemplate);
+    }
+
+    /**
+     * Does click the "+" button.
+     */
+    public void clickBtnHome() {
+        WebDriverHelper.clickElement(btnHome);
+    }
+
+    /**
+     * Method wait to load the component.
+     */
+    public LeftMenuComponent() {
         WebDriverHelper.waitUntil(btnTeams);
     }
 }
