@@ -1,5 +1,7 @@
 package com.trello.trello.entities;
 
+import core.selenium.helpers.Helper;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -25,10 +27,10 @@ public class Team {
 
     /**
      * Sets name of the board.
-     * @param nameBoard
+     * @param nameTeam
      */
-    public void setName(final String nameBoard) {
-        this.name = nameBoard;
+    public void setName(final String nameTeam) {
+        this.name = nameTeam.replaceAll("UNIQUE_ID", Helper.getTime());
     }
 
     /**
@@ -61,6 +63,18 @@ public class Team {
      */
     public void setDescription(final String descriptionTeam) {
         this.description = descriptionTeam;
+    }
+
+    /**
+     * Gets team as map.
+     * @return a entities team with as map.
+     */
+    public Map<String, String> getTeamAsMap() {
+        Map userInfoMap = new HashMap<String, String>();
+        userInfoMap.put("Name", getName());
+        userInfoMap.put("Type", getType());
+        userInfoMap.put("Description", getDescription());
+        return userInfoMap;
     }
 
     /**

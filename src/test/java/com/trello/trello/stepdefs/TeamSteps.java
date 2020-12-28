@@ -4,7 +4,9 @@ import com.trello.trello.entities.Context;
 import com.trello.trello.ui.pages.TeamPage;
 import com.trello.trello.ui.pages.components.LeftMenuComponent;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
 
 import java.util.Map;
 
@@ -19,6 +21,7 @@ public class TeamSteps {
 
     /**
      * Inject the Context class.
+     *
      * @param cont
      */
     public TeamSteps(final Context cont) {
@@ -36,6 +39,7 @@ public class TeamSteps {
 
     /**
      * The method created a TeamPage instance and creates a team.
+     *
      * @param dataTable
      */
     @And("I create a team with the following information")
@@ -43,5 +47,14 @@ public class TeamSteps {
         teamPage = new TeamPage();
         teamPage.waitLoadPage();
         teamPage.createTeam(dataTable);
+    }
+    /**
+     * The method verifies if the team was created.
+     *
+     */
+    @Then("I should see team name in Teams section")
+    public void iShouldSeeTeamNameInTeamsSection() {
+        String teamName = teamPage.getTeam().getTeamAsMap().get("Name");
+        Assert.assertTrue(leftMenu.searchTeamName(teamName));
     }
 }

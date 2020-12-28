@@ -54,6 +54,14 @@ public class TeamPage extends BasePage {
     }
 
     /**
+     * Method to return a team.
+     * @return team.
+     */
+    public Team getTeam() {
+        return team;
+    }
+
+    /**
      * Method wait to load BoardPage.
      */
     public void waitLoadPage() {
