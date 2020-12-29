@@ -25,8 +25,9 @@ public class LoginSteps {
      */
     @Given("I am on the login page")
     public void iAmOnTheLoginPage() {
-        System.out.println("********");
+        System.out.println("111++++* " + WebDriverHelper.getCurrentUrl());
         PageTransporter.navigateToPage("LOGIN");
+        System.out.println("111++++* " + WebDriverHelper.getCurrentUrl());
         login = new LoginPage();
     }
 
@@ -35,13 +36,13 @@ public class LoginSteps {
      */
     @When("I set username and password")
     public void iSetUsernameAndPassword() {
-        System.out.println("********** " + WebDriverHelper.getCurrentUrl());
+        System.out.println("2 ********** " + WebDriverHelper.getCurrentUrl());
         login.login();
         loginAtlasian = new LoginAtlasianPage();
         loginAtlasian.setPassword(EnvironmentTrello.getInstance().getPassword());
         loginAtlasian.clickLoginButton();
         login.waitLoadPage();
-        System.out.println("********** " + WebDriverHelper.getCurrentUrl());
+        System.out.println(" 22 ********** " + WebDriverHelper.getCurrentUrl());
     }
 
     /**

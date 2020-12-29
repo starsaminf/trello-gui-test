@@ -4,6 +4,7 @@ import com.trello.trello.config.EnvironmentTrello;
 import core.selenium.WebDriverHelper;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import core.selenium.WebDriverManager;
 
 public class LoginPage extends BasePage {
 
@@ -23,6 +24,8 @@ public class LoginPage extends BasePage {
      * Constructor of the LoginPage.
      */
     public LoginPage() {
+        String str = WebDriverManager.getInstance().getWebDriver().getPageSource();
+        System.out.println(str);
         WebDriverHelper.waitUntil(loginBtn);
     }
 
