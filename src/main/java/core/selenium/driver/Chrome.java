@@ -5,8 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.io.File;
-
 public class Chrome implements IDriver {
 
     private static final String DRIVER_PATH = EnvironmentChrome.getInstance().getDriverPath();

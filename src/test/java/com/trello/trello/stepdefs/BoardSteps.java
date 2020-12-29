@@ -3,7 +3,6 @@ package com.trello.trello.stepdefs;
 import com.trello.trello.entities.Context;
 import com.trello.trello.ui.pages.BoardPage;
 import core.selenium.WebDriverHelper;
-import core.selenium.WebDriverManager;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
