@@ -52,6 +52,7 @@ public class LoginSteps {
         loginAtlasian = new LoginAtlasianPage();
         loginAtlasian.setPassword(EnvironmentTrello.getInstance().getPassword());
         loginAtlasian.clickLoginButton();
+        System.out.println(WebDriverHelper.getCurrentUrl());
     }
 
     /**
