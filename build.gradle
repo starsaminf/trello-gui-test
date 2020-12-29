@@ -55,7 +55,7 @@ task executeBDDTests(type: Test) {
         jvmArgs = ['-Dcucumber.plugin=rerun:build/target/rerun.txt']
         jvmArgs = ['-Dcucumber.filter.tags=' + filterTags]
         jvmArgs = ['-DcucumberThreadCount=' + cucumberThreadCount]
-        jvmArgs = ['-Dbrowser=' + browser]
+        jvmArgs = ['-Dbrowser=chrome']
         jvmArgs = ['-Dbaseurl=' + baseurl]
         jvmArgs = ['-Dusername=' + username]
         jvmArgs = ['-Dpassword=' + password]
