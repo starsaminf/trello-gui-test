@@ -13,6 +13,10 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+    - name: Grant execute permission for chrome installer
+      run: chmod +x scripts/chrome_install.sh
+    - name: Execute chrome installer
+      run: scripts/./chrome_install.sh
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Assemble the project
@@ -25,3 +29,5 @@ jobs:
       with:
         name: CheckStyle
         path: build/reports/checkstyle/
+    - name: Execute executeBDD tests
+      run: ./gradlew executeBDDTests
