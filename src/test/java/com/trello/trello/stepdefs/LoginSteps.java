@@ -40,8 +40,10 @@ public class LoginSteps {
     public void iSetUsernameAndPassword() {
         System.out.println("2 ********** " + WebDriverHelper.getCurrentUrl());
         login.login();
+        Helper.takeScreenShot(WebDriverManager.getInstance().getWebDriver(), "screenshot/2.png");
         loginAtlasian = new LoginAtlasianPage();
         loginAtlasian.setPassword(EnvironmentTrello.getInstance().getPassword());
+        Helper.takeScreenShot(WebDriverManager.getInstance().getWebDriver(), "screenshot/4.png");
         loginAtlasian.clickLoginButton();
         login.waitLoadPage();
         System.out.println(" 22 ********** " + WebDriverHelper.getCurrentUrl());
