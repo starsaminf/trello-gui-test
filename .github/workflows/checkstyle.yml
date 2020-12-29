@@ -16,7 +16,7 @@ jobs:
     - name: Grant execute permission for chrome installer
       run: chmod +x scripts/chrome_install.sh
     - name: Execute chrome installer
-      run: scripts/./chrome_install.sh
+      run: ./scripts/chrome_install.sh
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Assemble the project
@@ -30,4 +30,4 @@ jobs:
         name: CheckStyle
         path: build/reports/checkstyle/
     - name: Execute executeBDD tests
-      run: ./gradlew executeBDDTests -Pusername=$USER_NAME -Ppassword=$PASSWORD -Pbaseurl=https://trello.com
+      run: ./gradlew executeBDDTests --info -Pusername=$USER_NAME -Ppassword=$PASSWORD -Pbaseurl=https://trello.com
