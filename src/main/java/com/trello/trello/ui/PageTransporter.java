@@ -27,7 +27,6 @@ public final class PageTransporter {
      * @param pageName
      */
     public static void navigateToPage(final String pageName) {
-        System.out.println("...." + PAGE_URL.get(pageName.toUpperCase()));
         navigateToUrl(EnvironmentTrello.getInstance().getBaseUrl().concat(PAGE_URL.get(pageName.toUpperCase())));
     }
 

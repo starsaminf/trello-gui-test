@@ -24,8 +24,6 @@ public class LoginPage extends BasePage {
      * Constructor of the LoginPage.
      */
     public LoginPage() {
-        String str = WebDriverManager.getInstance().getWebDriver().getPageSource();
-        System.out.println(str);
         WebDriverHelper.waitUntil(loginBtn);
     }
 

@@ -20,3 +20,8 @@ jobs:
       with:
         name: Screenshots
         path: screenshot/
+    - name: Upload build
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: build
