@@ -20,14 +20,9 @@ dependencies {
     testImplementation group: 'io.cucumber', name: 'cucumber-picocontainer', version: '6.0.0'
 }
 
-task cucumber() {
-    dependsOn assemble, compileTestJava
-    doLast {
-        javaexec {
-            main = "io.cucumber.core.cli.Main"
-            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'html:reports/test-report', '--plugin', 'pretty', '--glue', 'com.trello.trello', 'src/test/resources/features']
-        }
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
     }
 }
 
