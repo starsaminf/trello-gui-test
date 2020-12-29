@@ -34,11 +34,13 @@ public class LoginSteps {
      */
     @When("I set username and password")
     public void iSetUsernameAndPassword() {
+        System.out.println("********** " + WebDriverHelper.getCurrentUrl());
         login.login();
         loginAtlasian = new LoginAtlasianPage();
         loginAtlasian.setPassword(EnvironmentTrello.getInstance().getPassword());
         loginAtlasian.clickLoginButton();
         login.waitLoadPage();
+        System.out.println("********** " + WebDriverHelper.getCurrentUrl());
     }
 
     /**
@@ -52,7 +54,6 @@ public class LoginSteps {
         loginAtlasian = new LoginAtlasianPage();
         loginAtlasian.setPassword(EnvironmentTrello.getInstance().getPassword());
         loginAtlasian.clickLoginButton();
-        System.out.println(WebDriverHelper.getCurrentUrl());
     }
 
     /**
