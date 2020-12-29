@@ -25,6 +25,7 @@ public class LoginSteps {
      */
     @Given("I am on the login page")
     public void iAmOnTheLoginPage() {
+        System.out.println("********");
         PageTransporter.navigateToPage("LOGIN");
         login = new LoginPage();
     }
