@@ -26,7 +26,7 @@ task cucumber() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'html:reports/test-report', '--plugin', 'pretty', '--glue', 'com.hmtmcse.tutorial', 'src/test/resources/features']
+            args = ['--plugin', 'html:reports/test-report', '--plugin', 'pretty', '--glue', 'com.trello.trello', 'src/test/resources/features']
         }
     }
 }
