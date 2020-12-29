@@ -4,3 +4,4 @@ Feature: Login for trello
 
   Scenario: I am trying login with the valid credentials
     Given I am on the login page
+    When  I set username and password
