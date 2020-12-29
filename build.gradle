@@ -1,11 +1,9 @@
 plugins {
     id 'java'
-    id "io.qameta.allure" version "2.8.1"
 }
 
 apply plugin: 'java'
 apply plugin: 'checkstyle'
-apply plugin: "io.qameta.allure"
 
 
 repositories {
@@ -20,7 +18,6 @@ dependencies {
     testImplementation group: 'io.cucumber', name: 'cucumber-java', version: '6.0.0'
     testImplementation group: 'io.cucumber', name: 'cucumber-testng', version: '6.0.0'
     testImplementation group: 'io.cucumber', name: 'cucumber-picocontainer', version: '6.0.0'
-    testImplementation group: 'io.qameta.allure', name: 'allure-cucumber6-jvm', version: '2.13.6'
 }
 
 task cucumber() {
@@ -39,19 +36,11 @@ checkstyle {
     configFile = file("${rootProject.rootDir}/config/checkstyle/checkstyle.xml")
 }
 
-allure {
-    version = '2.8.1'
-    autoconfigure = true
-    aspectjweaver = true
-    allureJavaVersion = '2.13.6'
-}
-
 task executeBDDTests(type: Test) {
     useTestNG()
     exclude 'org/fundacionjala/trello/unit/tests/**'
     options {
         useDefaultListeners = false
-        jvmArgs = ['-Dcucumber.plugin=io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm']
         jvmArgs = ['-Dcucumber.plugin=rerun:build/target/rerun.txt']
         jvmArgs = ['-Dcucumber.filter.tags=' + filterTags]
         jvmArgs = ['-DcucumberThreadCount=' + cucumberThreadCount]
@@ -63,7 +52,6 @@ task executeBDDTests(type: Test) {
     }
     testLogging.showStandardStreams = true
     scanForTestClasses = false
-    finalizedBy 'allureReport'
 }
 
 task reExecuteBDDTests(type: Test) {
@@ -71,14 +59,12 @@ task reExecuteBDDTests(type: Test) {
     exclude 'org/fundacionjala/trello/unit/tests/**'
     options {
         useDefaultListeners = false
-        jvmArgs = ['-Dcucumber.plugin=io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm']
         jvmArgs = ['-Dcucumber.plugin=rerun:build/target/rerun.txt']
         jvmArgs = ['-Dcucumber.features=@build/target/rerun.txt']
         jvmArgs = ['-DcucumberThreadCount=' + cucumberThreadCount]
     }
     testLogging.showStandardStreams = true
     scanForTestClasses = false
-    finalizedBy 'allureReport'
 }
 
 test {
