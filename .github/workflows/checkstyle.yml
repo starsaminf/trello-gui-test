@@ -22,7 +22,7 @@ jobs:
     - name: Assemble the project
       run: ./gradlew assemble -Pusername=$USER_NAME -Ppassword=$PASSWORD
     - name: Build with Gradle
-      run: ./gradlew check
+      run: ./gradlew check -Pusername=$USER_NAME -Ppassword=$PASSWORD
     - name: Style Code Report
       if: failure()
       uses: actions/upload-artifact@v2
