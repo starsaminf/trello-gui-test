@@ -16,11 +16,13 @@ jobs:
     - name: Execute executeBDD tests
       run: ./gradlew executeBDDTests -Pusername=$USER_NAME -Ppassword=$PASSWORD -Pbaseurl=https://trello.com
     - name: Upload Screenshots
+      if: failure()
       uses: actions/upload-artifact@v2
       with:
         name: Screenshots
         path: screenshot/
     - name: Upload build
+      if: failure()
       uses: actions/upload-artifact@v2
       with:
         name: build
