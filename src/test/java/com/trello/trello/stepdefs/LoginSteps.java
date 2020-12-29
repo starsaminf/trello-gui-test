@@ -6,12 +6,15 @@ import core.selenium.WebDriverHelper;
 import core.selenium.WebDriverManager;
 import com.trello.trello.config.EnvironmentTrello;
 import com.trello.trello.ui.pages.LoginPage;
+import core.selenium.helpers.Helper;
 import io.cucumber.java.After;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
+
+import java.io.IOException;
 
 /**
  * LoginSteps class.
@@ -25,10 +28,9 @@ public class LoginSteps {
      */
     @Given("I am on the login page")
     public void iAmOnTheLoginPage() {
-        System.out.println("111++++* " + WebDriverHelper.getCurrentUrl());
         PageTransporter.navigateToPage("LOGIN");
-        System.out.println("111++++* " + WebDriverHelper.getCurrentUrl());
         login = new LoginPage();
+        Helper.takeScreenShot(WebDriverManager.getInstance().getWebDriver(), "screenshot/iAmOnTheLoginPage.png");
     }
 
     /**
