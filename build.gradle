@@ -55,6 +55,9 @@ task executeBDDTests(type: Test) {
         jvmArgs = ['-Dcucumber.plugin=rerun:build/target/rerun.txt']
         jvmArgs = ['-Dcucumber.filter.tags=' + filterTags]
         jvmArgs = ['-DcucumberThreadCount=' + cucumberThreadCount]
+        jvmArgs = ['-Dusername=' + username]
+        jvmArgs = ['-Dpassword=' + password]
+
     }
     testLogging.showStandardStreams = true
     scanForTestClasses = false
@@ -74,4 +77,10 @@ task reExecuteBDDTests(type: Test) {
     testLogging.showStandardStreams = true
     scanForTestClasses = false
     finalizedBy 'allureReport'
+}
+
+test {
+    testLogging {
+        showStandardStreams = true
+    }
 }
