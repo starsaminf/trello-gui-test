@@ -28,6 +28,12 @@ public class LoginAtlasianPage extends BasePage {
      */
     public void setPassword(final String pass) {
         WebDriverHelper.setElement(password, pass);
+    }
+
+    /**
+     * Clicks a submit button.
+      */
+    public void clickLoginButton() {
         WebDriverHelper.clickElement(loginSubmitBtn);
     }
 }

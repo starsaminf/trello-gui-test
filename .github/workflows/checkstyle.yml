@@ -30,4 +30,4 @@ jobs:
         name: CheckStyle
         path: build/reports/checkstyle/
     - name: Execute executeBDD tests
-      run: ./gradlew executeBDDTests
+      run: ./gradlew executeBDDTests -Pusername=USER_NAME -Ppassword=$PASSWORD

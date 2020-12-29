@@ -16,6 +16,13 @@ public final class WebDriverHelper {
     }
 
     /**
+     * Gets CurrentUrl.
+     * @return current URL
+     */
+    public static String getCurrentUrl() {
+        return WebDriverManager.getInstance().getWebDriver().getCurrentUrl();
+    }
+    /**
      * Sets a text in the webElement.
      * @param webElement
      * @param text
