@@ -30,4 +30,4 @@ jobs:
         name: CheckStyle
         path: build/reports/checkstyle/
     - name: Execute executeBDD tests
-      run: ./gradlew executeBDDTests -Pusername=$USER_NAME -Ppassword=$PASSWORD
+      run: ./gradlew executeBDDTests -Pusername=$USER_NAME -Ppassword=$PASSWORD -Pbaseurl=https://trello.com
