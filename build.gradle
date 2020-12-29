@@ -38,30 +38,17 @@ checkstyle {
 
 task executeBDDTests(type: Test) {
     useTestNG()
-    exclude 'org/fundacionjala/trello/unit/tests/**'
     options {
         useDefaultListeners = false
-        jvmArgs = ['-Dcucumber.plugin=rerun:build/target/rerun.txt']
         jvmArgs = ['-Dcucumber.filter.tags=' + filterTags]
         jvmArgs = ['-DcucumberThreadCount=' + cucumberThreadCount]
         jvmArgs = ['-Dbrowser=chrome']
+        jvmArgs = ['-DdriveChromePath=driver/chromedriver']
+        jvmArgs = ['-DimplicitTime=60']
+        jvmArgs = ['-DexplicitTime=80']
         jvmArgs = ['-Dbaseurl=' + baseurl]
         jvmArgs = ['-Dusername=' + username]
         jvmArgs = ['-Dpassword=' + password]
-
-    }
-    testLogging.showStandardStreams = true
-    scanForTestClasses = false
-}
-
-task reExecuteBDDTests(type: Test) {
-    useTestNG()
-    exclude 'org/fundacionjala/trello/unit/tests/**'
-    options {
-        useDefaultListeners = false
-        jvmArgs = ['-Dcucumber.plugin=rerun:build/target/rerun.txt']
-        jvmArgs = ['-Dcucumber.features=@build/target/rerun.txt']
-        jvmArgs = ['-DcucumberThreadCount=' + cucumberThreadCount]
     }
     testLogging.showStandardStreams = true
     scanForTestClasses = false
