@@ -2,6 +2,7 @@ package com.trello.trello.stepdefs;
 
 import com.trello.trello.ui.PageTransporter;
 import com.trello.trello.ui.pages.LoginAtlasianPage;
+import core.selenium.WebDriverHelper;
 import core.selenium.WebDriverManager;
 import com.trello.trello.config.EnvironmentTrello;
 import com.trello.trello.ui.pages.LoginPage;
@@ -18,7 +19,7 @@ import org.testng.Assert;
 public class LoginSteps {
 
     private LoginPage login;
-
+    private LoginAtlasianPage loginAtlasian;
     /**
      * Create a new login instance.
      */
@@ -34,27 +35,10 @@ public class LoginSteps {
     @When("I set username and password")
     public void iSetUsernameAndPassword() {
         login.login();
-        LoginAtlasianPage loginAtlasian = new LoginAtlasianPage();
+        loginAtlasian = new LoginAtlasianPage();
         loginAtlasian.setPassword(EnvironmentTrello.getInstance().getPassword());
-    }
-
-    /**
-     * Verify if the current url contains the parameter.
-     * @param suffix
-     */
-    @Then("I should view the {string} suffix in the URL")
-    public void iShouldViewTheSuffixInTheURL(final String suffix) {
+        loginAtlasian.clickLoginButton();
         login.waitLoadPage();
-        String actual = login.getCurrentUrl();
-        Assert.assertTrue(actual.contains(suffix));
-    }
-
-    /**
-     * Login in the first step.
-     */
-    @When("I set username and password with fields empty")
-    public void iSetUsernameAndPasswordWithFieldsEmpty() {
-        login.login();
     }
 
     /**
@@ -65,8 +49,32 @@ public class LoginSteps {
         PageTransporter.navigateToPage("LOGIN");
         login = new LoginPage();
         login.login();
-        LoginAtlasianPage loginAtlasian = new LoginAtlasianPage();
+        loginAtlasian = new LoginAtlasianPage();
         loginAtlasian.setPassword(EnvironmentTrello.getInstance().getPassword());
+        loginAtlasian.clickLoginButton();
+    }
+
+    /**
+     * Login in the first step.
+     */
+    @When("I set username and password with fields empty")
+    public void iSetUsernameAndPasswordWithFieldsEmpty() {
+        PageTransporter.navigateToPage("LOGIN");
+        login = new LoginPage();
+        login.login();
+        loginAtlasian = new LoginAtlasianPage();
+        loginAtlasian.setPassword("");
+        loginAtlasian.clickLoginButton();
+    }
+
+    /**
+     * Verify if the current url contains the parameter.
+     * @param suffix
+     */
+    @Then("I should view the {string} suffix in the URL")
+    public void iShouldViewTheSuffixInTheURL(final String suffix) {
+        String actual = WebDriverHelper.getCurrentUrl();
+        Assert.assertTrue(actual.contains(suffix));
     }
 
     /**

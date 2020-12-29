@@ -73,4 +73,12 @@ public final class WebDriverHelper {
         By dropDownOption = By.xpath("//*[contains(text(),'" + optionName + "')]");
         WebDriverHelper.clickElement(dropDownOption);
     }
+
+    /**
+     * Gets CurrentUrl.
+     * @return current URL
+     */
+    public static String getCurrentUrl() {
+        return WebDriverManager.getInstance().getWebDriver().getCurrentUrl();
+    }
 }
