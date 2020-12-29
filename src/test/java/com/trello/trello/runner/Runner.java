@@ -30,8 +30,8 @@ public final class Runner extends AbstractTestNGCucumberTests {
      */
     @BeforeTest
     public void beforeAllScenarios() {
-        System.setProperty("dataproviderthreadcount", Environment.getInstance().getCucumberThreadCount());
-        System.setProperty("webdriver.chrome.driver", EnvironmentChrome.getInstance().getDriverPath());
+        System.setProperty("dataproviderthreadcount", "1");
+        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
     }
 
     /**
