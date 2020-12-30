@@ -15,7 +15,7 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         plugin = {"pretty"},
         features = {"src/test/resources/features/"},
-        glue = {"com.trello.trello"}
+        glue = {"stepdefs", "com.trello.trello"}
 )
 
 public final class Runner extends AbstractTestNGCucumberTests {

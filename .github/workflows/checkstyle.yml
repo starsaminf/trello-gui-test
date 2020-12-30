@@ -13,15 +13,21 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+    - name: Grant execute permission for chrome installer
+      run: chmod +x scripts/chrome_install.sh
+    - name: Execute chrome installer
+      run: scripts/./chrome_install.sh
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Assemble the project
-      run: ./gradlew assemble
+      run: ./gradlew assemble -Pusername= -Ppassword= -Pbaseurl=
     - name: Build with Gradle
-      run: ./gradlew check
+      run: ./gradlew check -Pusername= -Ppassword= -Pbaseurl=
     - name: Style Code Report
       if: failure()
       uses: actions/upload-artifact@v2
       with:
         name: CheckStyle
         path: build/reports/checkstyle/
+    - name: Execute executeBDD tests
+      run: ./gradlew executeBDDTests -Pusername=${{ secrets.USER_NAME }} -Ppassword=${{ secrets.PASSWORD }} -Pbaseurl=https://trello.com

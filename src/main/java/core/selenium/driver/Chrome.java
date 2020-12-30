@@ -3,6 +3,7 @@ package core.selenium.driver;
 import core.selenium.config.EnvironmentChrome;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Chrome implements IDriver {
 
@@ -14,6 +15,8 @@ public class Chrome implements IDriver {
      */
     public WebDriver initDriver() {
         System.setProperty("webdriver.chrome.driver", DRIVER_PATH);
-        return new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless", "--disable-gpu", "--no-sandbox", "--window-size=1920,1200");
+        return new ChromeDriver(options);
     }
 }

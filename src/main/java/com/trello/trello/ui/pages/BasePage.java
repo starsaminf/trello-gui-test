@@ -21,12 +21,4 @@ public abstract class BasePage {
         this.webDriveWait = WebDriverManager.getInstance().getWebDriverWait();
         PageFactory.initElements(this.webDrive, this);
     }
-
-    /**
-     * Gets CurrentUrl.
-     * @return current URL
-     */
-    public String getCurrentUrl() {
-        return webDrive.getCurrentUrl();
-    }
 }
