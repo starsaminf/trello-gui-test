@@ -1,0 +1,61 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "children" : [ {
+    "name" : "com.trello.trello.runner.Runner",
+    "children" : [ {
+      "name" : "runScenario",
+      "uid" : "c6ff57e0fe4baebd",
+      "parentUid" : "4ba80e2980168aa93cf02d17fa472ef8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609352251413,
+        "stop" : 1609352282385,
+        "duration" : 30972
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "\"Verify board is created with minimum required.\"", "\"Optional[Create Board]\"" ]
+    }, {
+      "name" : "runScenario",
+      "uid" : "2ad52ce60a67eeca",
+      "parentUid" : "4ba80e2980168aa93cf02d17fa472ef8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609352282475,
+        "stop" : 1609352292930,
+        "duration" : 10455
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "\"I am trying login with the valid credentials\"", "\"Optional[Login for trello]\"" ]
+    }, {
+      "name" : "runScenario",
+      "uid" : "5380e74fe8ad40f",
+      "parentUid" : "4ba80e2980168aa93cf02d17fa472ef8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609352292949,
+        "stop" : 1609352296863,
+        "duration" : 3914
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "\"I am trying login with the wrong credentials\"", "\"Optional[Login for trello]\"" ]
+    }, {
+      "name" : "runScenario",
+      "uid" : "750bea0885e24cb4",
+      "parentUid" : "4ba80e2980168aa93cf02d17fa472ef8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609352296865,
+        "stop" : 1609352308708,
+        "duration" : 11843
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "\"Creates a new team without members\"", "\"Optional[Create Team]\"" ]
+    } ],
+    "uid" : "com.trello.trello.runner.Runner"
+  } ],
+  "name" : "packages"
+}
