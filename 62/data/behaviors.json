@@ -1,0 +1,57 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "children" : [ {
+    "name" : "Runs Cucumber Scenarios",
+    "uid" : "9a0e64a4475010b4",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1609352012861,
+      "stop" : 1609352045825,
+      "duration" : 32964
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "\"Verify board is created with minimum required.\"", "\"Optional[Create Board]\"" ]
+  }, {
+    "name" : "Runs Cucumber Scenarios",
+    "uid" : "c10938ace1d1dd2",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1609352045961,
+      "stop" : 1609352056124,
+      "duration" : 10163
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "\"I am trying login with the valid credentials\"", "\"Optional[Login for trello]\"" ]
+  }, {
+    "name" : "Runs Cucumber Scenarios",
+    "uid" : "daa875b4f4f6e91f",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1609352056155,
+      "stop" : 1609352060042,
+      "duration" : 3887
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "\"I am trying login with the wrong credentials\"", "\"Optional[Login for trello]\"" ]
+  }, {
+    "name" : "Runs Cucumber Scenarios",
+    "uid" : "61e8c974a93ab23a",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1609352060046,
+      "stop" : 1609352071882,
+      "duration" : 11836
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "\"Creates a new team without members\"", "\"Optional[Create Team]\"" ]
+  } ],
+  "name" : "behaviors"
+}
