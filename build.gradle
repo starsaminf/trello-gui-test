@@ -1,10 +1,8 @@
 plugins {
     id 'java'
+    id 'checkstyle'
+    id "io.qameta.allure" version "2.8.1"
 }
-
-apply plugin: 'java'
-apply plugin: 'checkstyle'
-
 
 repositories {
     mavenCentral()
@@ -18,6 +16,14 @@ dependencies {
     testImplementation group: 'io.cucumber', name: 'cucumber-java', version: '6.0.0'
     testImplementation group: 'io.cucumber', name: 'cucumber-testng', version: '6.0.0'
     testImplementation group: 'io.cucumber', name: 'cucumber-picocontainer', version: '6.0.0'
+    testImplementation group: 'io.qameta.allure', name: 'allure-cucumber6-jvm', version: '2.13.6'
+}
+
+allure {
+    version = '2.8.1'
+    autoconfigure = true
+    aspectjweaver = true
+    allureJavaVersion = '2.13.6'
 }
 
 configurations {
@@ -35,6 +41,8 @@ task executeBDDTests(type: Test) {
     useTestNG()
     options {
         useDefaultListeners = false
+        jvmArgs = ['-Dcucumber.plugin=io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm']
+        jvmArgs = ['-Dcucumber.plugin=rerun:build/target/rerun.txt']
         jvmArgs = ['-Dcucumber.filter.tags=' + filterTags]
         jvmArgs = ['-DcucumberThreadCount=' + cucumberThreadCount]
         jvmArgs = ['-Dbrowser=chrome']
@@ -47,10 +55,26 @@ task executeBDDTests(type: Test) {
     }
     testLogging.showStandardStreams = true
     scanForTestClasses = false
+    finalizedBy 'allureReport'
 }
 
-test {
-    testLogging {
-        showStandardStreams = true
+task reRunBDDTests(type: Test) {
+    useTestNG()
+    options {
+        useDefaultListeners = false
+        jvmArgs = ['-Dcucumber.plugin=io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm']
+        jvmArgs = ['-Dcucumber.plugin=rerun:build/target/rerun.txt']
+        jvmArgs = ['-Dcucumber.features=@build/target/rerun.txt']
+        jvmArgs = ['-DcucumberThreadCount=' + cucumberThreadCount]
+        jvmArgs = ['-Dbrowser=chrome']
+        jvmArgs = ['-DdriveChromePath=driver/chromedriver']
+        jvmArgs = ['-DimplicitTime=60']
+        jvmArgs = ['-DexplicitTime=80']
+        jvmArgs = ['-Dbaseurl=' + baseurl]
+        jvmArgs = ['-Dusername=' + username]
+        jvmArgs = ['-Dpassword=' + password]
     }
+    testLogging.showStandardStreams = true
+    scanForTestClasses = false
+    finalizedBy 'allureReport'
 }
