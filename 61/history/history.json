@@ -1,0 +1,82 @@
+{
+  "c929eece8435318a56135f5bedc39c33" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "41f880fc93f1454",
+      "reportUrl" : "https://GUI-Automation-AT12.github.io/samuel-trello-gui-test/61//#testresult/41f880fc93f1454",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609351000668,
+        "stop" : 1609351010763,
+        "duration" : 10095
+      }
+    } ]
+  },
+  "dc725c770c46281554097590eafc3131" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "45a78cfdc880f33c",
+      "reportUrl" : "https://GUI-Automation-AT12.github.io/samuel-trello-gui-test/61//#testresult/45a78cfdc880f33c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609351010806,
+        "stop" : 1609351014504,
+        "duration" : 3698
+      }
+    } ]
+  },
+  "96d5c8e7fb95d9b3b93e0ae1b9a7fba3" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "19c309d519917a3",
+      "reportUrl" : "https://GUI-Automation-AT12.github.io/samuel-trello-gui-test/61//#testresult/19c309d519917a3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609351014507,
+        "stop" : 1609351026314,
+        "duration" : 11807
+      }
+    } ]
+  },
+  "6e2d1e7a73d1fa972dc8ba2d140ecdeb" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "96d6411a22948dc1",
+      "reportUrl" : "https://GUI-Automation-AT12.github.io/samuel-trello-gui-test/61//#testresult/96d6411a22948dc1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609350985941,
+        "stop" : 1609351000505,
+        "duration" : 14564
+      }
+    } ]
+  }
+}
