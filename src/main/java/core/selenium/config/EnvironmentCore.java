@@ -1,7 +1,5 @@
 package core.selenium.config;
 
-import com.trello.trello.config.ReaderPropertiesCore;
-
 /**
  * PropertiesReader class.
  */
