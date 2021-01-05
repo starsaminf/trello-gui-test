@@ -1,0 +1,10 @@
+[ {
+  "name" : "GitHub Actions",
+  "type" : "github",
+  "url" : "https://GUI-Automation-AT12.github.io/samuel-trello-gui-test",
+  "buildOrder" : 65,
+  "buildName" : "GitHub Actions Run #463074373",
+  "buildUrl" : "https://github.com/GUI-Automation-AT12/samuel-trello-gui-test/actions/runs/463074373",
+  "reportName" : "Allure Report with history",
+  "reportUrl" : "https://GUI-Automation-AT12.github.io/samuel-trello-gui-test/65/"
+} ]

@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Tue Jan 05 09:42:41 GMT 2021","Tue Jan 05 09:42:42 GMT 2021","343","Gradle suite","Gradle test","com.trello.trello.runner.Runner","com.trello.trello.runner.Runner","runScenario","Runs Cucumber Scenarios",""
+"broken","Tue Jan 05 09:42:41 GMT 2021","Tue Jan 05 09:42:41 GMT 2021","390","Gradle suite","Gradle test","com.trello.trello.runner.Runner","com.trello.trello.runner.Runner","runScenario","Runs Cucumber Scenarios",""
+"broken","Tue Jan 05 09:42:42 GMT 2021","Tue Jan 05 09:42:42 GMT 2021","396","Gradle suite","Gradle test","com.trello.trello.runner.Runner","com.trello.trello.runner.Runner","runScenario","Runs Cucumber Scenarios",""
+"broken","Tue Jan 05 09:42:33 GMT 2021","Tue Jan 05 09:42:41 GMT 2021","7552","Gradle suite","Gradle test","com.trello.trello.runner.Runner","com.trello.trello.runner.Runner","runScenario","Runs Cucumber Scenarios",""
