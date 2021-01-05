@@ -2,6 +2,7 @@ package com.trello.trello.ui.pages;
 
 import com.trello.trello.entities.Team;
 import core.selenium.WebDriverHelper;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -27,6 +28,7 @@ public class TeamPage extends BasePage {
     @FindBy(css = "a[data-test-id='show-later-button']")
     private WebElement btnThisLater;
 
+    private String optionTeamSelect = "//*[contains(text(),'%s')]";
 
     private Team team;
 
@@ -46,7 +48,7 @@ public class TeamPage extends BasePage {
         WebDriverHelper.waitUntil(inputTeamName);
         WebDriverHelper.setElement(inputTeamName, team.getName());
         WebDriverHelper.clickElement(dropDownTeamType);
-        WebDriverHelper.selectDropDownOptionByName(team.getType());
+        selectDropDownOptionByName(team.getType());
         WebDriverHelper.setElement(inputTeamDescription, team.getDescription());
         WebDriverHelper.clickElement(btnContinue);
         WebDriverHelper.waitUntil(btnThisLater);
@@ -59,6 +61,15 @@ public class TeamPage extends BasePage {
      */
     public Team getTeam() {
         return team;
+    }
+
+    /**
+     * Selects an element from a html select tag.
+     * @param optionName
+     */
+    public void selectDropDownOptionByName(final String optionName) {
+        By dropDownOption = By.xpath(String.format(optionTeamSelect, optionName));
+        WebDriverHelper.clickElement(dropDownOption);
     }
 
     /**

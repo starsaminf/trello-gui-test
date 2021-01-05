@@ -1,6 +1,6 @@
 package com.trello.trello.entities;
 
-import core.selenium.helpers.Helper;
+import core.selenium.utils.Helper;
 
 import java.util.HashMap;
 import java.util.HashSet;

@@ -1,40 +1,19 @@
 package com.trello.trello.config;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Properties;
-
 /**
  * PropertiesReader class.
  */
 public final class EnvironmentTrello {
 
-    private static final String PATH = "trello.properties";
-    private static EnvironmentTrello environment;
-    private static final Logger LOGGER = LogManager.getLogger(EnvironmentTrello.class);
-    private Properties property;
-    private FileReader reader;
+    private static final String FILE_PROPERTIES = "gradle.properties";
+    private static EnvironmentTrello environment = null;
+    private ReaderPropertiesTrello readerProperties;
 
     /**
      * Initializes an instance of properties files.
      */
     private EnvironmentTrello() {
-        try {
-            reader = new FileReader(PATH);
-            property = new Properties();
-            property.load(reader);
-        } catch (FileNotFoundException e) {
-            LOGGER.error("Error when reading file");
-            LOGGER.error(e.getMessage());
-        } catch (IOException e) {
-            LOGGER.error("Error getting properties");
-            LOGGER.error(e.getMessage());
-        } finally {
-            closeReader();
-        }
+        readerProperties = new ReaderPropertiesTrello(FILE_PROPERTIES);
     }
 
     /**
@@ -55,48 +34,40 @@ public final class EnvironmentTrello {
      * @return base url.
      */
     public String getBaseUrl() {
-        return this.getEnvProperty("baseurl");
+        return readerProperties.getEnvProperty("baseurl");
     }
 
     /**
-     * get the User from the file.properties.
+     * Gets the User from the file.properties.
      *
      * @return User value.
      */
     public String getUsername() {
-        return this.getEnvProperty("username");
+        return readerProperties.getEnvProperty("username");
     }
 
     /**
-     * get the password from the file.properties.
+     * Gets the password from the file.properties.
      *
      * @return Password value.
      */
     public String getPassword() {
-        return this.getEnvProperty("password");
+        return readerProperties.getEnvProperty("password");
     }
 
     /**
-     * Gets environment property.
-     * @param env
-     * @return localProperty
+     * Gets driver Properties Path.
+     * @return driverPropertiesPath
      */
-    protected String getEnvProperty(final String env) {
-        String localProperty = System.getProperty(env);
-        if (localProperty == null) {
-            return this.property.getProperty(env);
-        }
-        return localProperty;
+    public String getDrivePropertiesPath() {
+        return readerProperties.getEnvProperty("driverPropertiesPath");
     }
 
     /**
-     * Closes FileReader.
+     * Gets browser fot the test.
+     * @return browser
      */
-    private void closeReader() {
-        try {
-            reader.close();
-        } catch (IOException e) {
-            LOGGER.error("Cannot close File Reader.");
-        }
+    public String getBrowser() {
+        return readerProperties.getEnvProperty("browser");
     }
 }
