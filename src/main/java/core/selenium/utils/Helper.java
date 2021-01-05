@@ -1,4 +1,4 @@
-package core.selenium.helpers;
+package core.selenium.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -7,7 +7,9 @@ import java.util.Date;
  * Helper class.
  */
 public final class Helper {
-
+    /**
+     * Constructor.
+     */
     private Helper() {
 
     }
@@ -21,3 +23,4 @@ public final class Helper {
         return simpleDateFormat.format(new Date());
     }
 }
+

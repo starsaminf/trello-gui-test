@@ -66,15 +66,6 @@ public final class WebDriverHelper {
     }
 
     /**
-     * Selects an element from a html select tag.
-     * @param optionName
-     */
-    public static void selectDropDownOptionByName(final String optionName) {
-        By dropDownOption = By.xpath("//*[contains(text(),'" + optionName + "')]");
-        WebDriverHelper.clickElement(dropDownOption);
-    }
-
-    /**
      * Gets CurrentUrl.
      * @return current URL
      */
