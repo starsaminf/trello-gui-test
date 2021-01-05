@@ -9,7 +9,6 @@ public class DriverEntities {
 
     private String navigator;
     private String version;
-    private String driverPath;
     private long implicitWaitingSeconds;
     private long explicitWaitingSeconds;
     private long sleepingTimeMills;
@@ -45,22 +44,6 @@ public class DriverEntities {
      */
     public void setVersion(final String driverVersion) {
         this.version = driverVersion;
-    }
-
-    /**
-     * Gets the driver location.
-     * @return the driver location
-     */
-    public String getDriverPath() {
-        return driverPath;
-    }
-
-    /**
-     * Sets driver path.
-     * @param jsonDriverPath
-     */
-    public void setDriverPath(final String jsonDriverPath) {
-        this.driverPath = jsonDriverPath;
     }
 
     /**
