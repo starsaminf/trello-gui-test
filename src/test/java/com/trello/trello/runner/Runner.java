@@ -1,8 +1,5 @@
 package com.trello.trello.runner;
 
-import core.selenium.WebDriverManager;
-import core.selenium.config.Environment;
-import core.selenium.config.EnvironmentChrome;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterTest;
@@ -15,12 +12,12 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         plugin = {"pretty"},
         features = {"src/test/resources/features/"},
-        glue = {"stepdefs", "com.trello.trello"}
+        glue = {"com.trello.trello"}
 )
 
 public final class Runner extends AbstractTestNGCucumberTests {
     @Override
-    @DataProvider(parallel = true)
+    @DataProvider(parallel = false)
     public Object[][] scenarios() {
         return super.scenarios();
     }
@@ -30,8 +27,6 @@ public final class Runner extends AbstractTestNGCucumberTests {
      */
     @BeforeTest
     public void beforeAllScenarios() {
-        System.setProperty("dataproviderthreadcount", Environment.getInstance().getCucumberThreadCount());
-        System.setProperty("webdriver.chrome.driver", EnvironmentChrome.getInstance().getDriverPath());
     }
 
     /**
@@ -39,6 +34,5 @@ public final class Runner extends AbstractTestNGCucumberTests {
      */
     @AfterTest
     public void afterAllScenarios() {
-        WebDriverManager.getInstance().getWebDriver().quit();
     }
 }
