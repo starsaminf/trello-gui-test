@@ -1,0 +1,170 @@
+{
+  "uid" : "720cf42ad8ac34f9",
+  "name" : "Runs Cucumber Scenarios",
+  "fullName" : "io.cucumber.testng.AbstractTestNGCucumberTests.runScenario",
+  "historyId" : "dc725c770c46281554097590eafc3131",
+  "time" : {
+    "start" : 1609839265155,
+    "stop" : 1609839269189,
+    "duration" : 4034
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "beforeAllScenarios",
+    "time" : {
+      "start" : 1609839239977,
+      "stop" : 1609839239987,
+      "duration" : 10
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "setUpClass",
+    "time" : {
+      "start" : 1609839240010,
+      "stop" : 1609839240674,
+      "duration" : 664
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "afterAllScenarios",
+    "time" : {
+      "start" : 1609839279452,
+      "stop" : 1609839279452,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "tearDownClass",
+    "time" : {
+      "start" : 1609839279446,
+      "stop" : 1609839279450,
+      "duration" : 4
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "com.trello.trello.runner.Runner"
+  }, {
+    "name" : "testClass",
+    "value" : "com.trello.trello.runner.Runner"
+  }, {
+    "name" : "testMethod",
+    "value" : "runScenario"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Gradle suite"
+  }, {
+    "name" : "suite",
+    "value" : "Gradle test"
+  }, {
+    "name" : "subSuite",
+    "value" : "com.trello.trello.runner.Runner"
+  }, {
+    "name" : "host",
+    "value" : "fv-az270-885"
+  }, {
+    "name" : "thread",
+    "value" : "4939@fv-az270-885.Test worker(11)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "\"I am trying login with the wrong credentials\""
+  }, {
+    "name" : "arg1",
+    "value" : "\"Optional[Login for trello]\""
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "5380e74fe8ad40f",
+        "reportUrl" : "https://GUI-Automation-AT12.github.io/samuel-trello-gui-test/63//#testresult/5380e74fe8ad40f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609352292949,
+          "stop" : 1609352296863,
+          "duration" : 3914
+        }
+      }, {
+        "uid" : "daa875b4f4f6e91f",
+        "reportUrl" : "https://GUI-Automation-AT12.github.io/samuel-trello-gui-test/62//#testresult/daa875b4f4f6e91f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609352056155,
+          "stop" : 1609352060042,
+          "duration" : 3887
+        }
+      }, {
+        "uid" : "45a78cfdc880f33c",
+        "reportUrl" : "https://GUI-Automation-AT12.github.io/samuel-trello-gui-test/61//#testresult/45a78cfdc880f33c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609351010806,
+          "stop" : 1609351014504,
+          "duration" : 3698
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "720cf42ad8ac34f9.json",
+  "parameterValues" : [ "\"I am trying login with the wrong credentials\"", "\"Optional[Login for trello]\"" ]
+}
