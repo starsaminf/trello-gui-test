@@ -1,45 +1,75 @@
 package core.selenium.config;
 
+import com.trello.trello.config.ReaderPropertiesCore;
+
 /**
  * PropertiesReader class.
  */
-public final class EnvironmentCore{
+public final class EnvironmentCore {
 
-    private static final String PATH = "gradle.properties";
-    private static Environment environment;
+    private static final String FILE_PROPERTIES = "gradle.properties";
+    private static EnvironmentCore environment = null;
+    private ReaderPropertiesCore readerPropertiesCore;
 
     /**
-     * Initializes an instance of Environment Chrome.
+     * Initializes an instance of properties files.
      */
-    private Environment() {
-        super(PATH);
+    private EnvironmentCore() {
+        readerPropertiesCore = new ReaderPropertiesCore(FILE_PROPERTIES);
     }
 
     /**
-     * Gets instance or create a new one.
+     * get instance or create a new one.
      *
      * @return PropertiesReader instance.
      */
-    public static Environment getInstance() {
+    public static EnvironmentCore getInstance() {
         if (environment == null) {
-            environment = new Environment();
+            environment = new EnvironmentCore();
         }
         return environment;
     }
 
     /**
-     * Gets the cucumberThreadCount from the file.properties.
-     * @return cucumberThreadCount value.
+     * get the BaseUrl from the file.properties.
+     *
+     * @return base url.
      */
-    public String getCucumberThreadCount() {
-        return getEnvProperty("cucumberThreadCount");
+    public String getBaseUrl() {
+        return readerPropertiesCore.getEnvProperty("baseurl");
     }
 
     /**
-     * Gets the configuration of the browser.
-     * @return browser value.
+     * Gets the User from the file.properties.
+     *
+     * @return User value.
+     */
+    public String getUsername() {
+        return readerPropertiesCore.getEnvProperty("username");
+    }
+
+    /**
+     * Gets the password from the file.properties.
+     *
+     * @return Password value.
+     */
+    public String getPassword() {
+        return readerPropertiesCore.getEnvProperty("password");
+    }
+
+    /**
+     * Gets driver Properties Path.
+     * @return driverPropertiesPath
+     */
+    public String getDrivePropertiesPath() {
+        return readerPropertiesCore.getEnvProperty("driverPropertiesPath");
+    }
+
+    /**
+     * Gets browser fot the test.
+     * @return browser
      */
     public String getBrowser() {
-        return getEnvProperty("browser");
+        return readerPropertiesCore.getEnvProperty("browser");
     }
 }
