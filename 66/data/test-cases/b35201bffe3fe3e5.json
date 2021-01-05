@@ -1,0 +1,189 @@
+{
+  "uid" : "b35201bffe3fe3e5",
+  "name" : "Runs Cucumber Scenarios",
+  "fullName" : "io.cucumber.testng.AbstractTestNGCucumberTests.runScenario",
+  "historyId" : "c929eece8435318a56135f5bedc39c33",
+  "time" : {
+    "start" : 1609840024956,
+    "stop" : 1609840033429,
+    "duration" : 8473
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "setUpClass",
+    "time" : {
+      "start" : 1609840008664,
+      "stop" : 1609840009427,
+      "duration" : 763
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "beforeAllScenarios",
+    "time" : {
+      "start" : 1609840008630,
+      "stop" : 1609840008640,
+      "duration" : 10
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "tearDownClass",
+    "time" : {
+      "start" : 1609840047307,
+      "stop" : 1609840047311,
+      "duration" : 4
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "afterAllScenarios",
+    "time" : {
+      "start" : 1609840047314,
+      "stop" : 1609840047315,
+      "duration" : 1
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "com.trello.trello.runner.Runner"
+  }, {
+    "name" : "testClass",
+    "value" : "com.trello.trello.runner.Runner"
+  }, {
+    "name" : "testMethod",
+    "value" : "runScenario"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Gradle suite"
+  }, {
+    "name" : "suite",
+    "value" : "Gradle test"
+  }, {
+    "name" : "subSuite",
+    "value" : "com.trello.trello.runner.Runner"
+  }, {
+    "name" : "host",
+    "value" : "fv-az54-194"
+  }, {
+    "name" : "thread",
+    "value" : "4770@fv-az54-194.Test worker(11)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "\"I am trying login with the valid credentials\""
+  }, {
+    "name" : "arg1",
+    "value" : "\"Optional[Login for trello]\""
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 5,
+        "unknown" : 0,
+        "total" : 6
+      },
+      "items" : [ {
+        "uid" : "9475cdde21f2ec95",
+        "reportUrl" : "https://GUI-Automation-AT12.github.io/samuel-trello-gui-test/65//#testresult/9475cdde21f2ec95",
+        "status" : "broken",
+        "statusDetails" : "unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'fv-az16-39', ip: '10.1.0.4', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-1032-azure', java.version: '11.0.9'\nDriver info: driver.version: ChromeDriver\nremote stacktrace: #0 0x55a0a1d5ee79 <unknown>\n",
+        "time" : {
+          "start" : 1609839761260,
+          "stop" : 1609839761650,
+          "duration" : 390
+        }
+      }, {
+        "uid" : "a070ee5238753056",
+        "reportUrl" : "https://GUI-Automation-AT12.github.io/samuel-trello-gui-test/64//#testresult/a070ee5238753056",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609839256164,
+          "stop" : 1609839265141,
+          "duration" : 8977
+        }
+      }, {
+        "uid" : "2ad52ce60a67eeca",
+        "reportUrl" : "https://GUI-Automation-AT12.github.io/samuel-trello-gui-test/63//#testresult/2ad52ce60a67eeca",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609352282475,
+          "stop" : 1609352292930,
+          "duration" : 10455
+        }
+      }, {
+        "uid" : "c10938ace1d1dd2",
+        "reportUrl" : "https://GUI-Automation-AT12.github.io/samuel-trello-gui-test/62//#testresult/c10938ace1d1dd2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609352045961,
+          "stop" : 1609352056124,
+          "duration" : 10163
+        }
+      }, {
+        "uid" : "41f880fc93f1454",
+        "reportUrl" : "https://GUI-Automation-AT12.github.io/samuel-trello-gui-test/61//#testresult/41f880fc93f1454",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609351000668,
+          "stop" : 1609351010763,
+          "duration" : 10095
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "b35201bffe3fe3e5.json",
+  "parameterValues" : [ "\"I am trying login with the valid credentials\"", "\"Optional[Login for trello]\"" ]
+}
