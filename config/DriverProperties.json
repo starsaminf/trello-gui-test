@@ -6,6 +6,7 @@
     "explicitWaitingSeconds": "60",
     "sleepingTimeMills": "500",
     "flags": [
+      "--headless",
       "--disable-gpu",
       "--no-sandbox",
       "--window-size=1920,1200"
